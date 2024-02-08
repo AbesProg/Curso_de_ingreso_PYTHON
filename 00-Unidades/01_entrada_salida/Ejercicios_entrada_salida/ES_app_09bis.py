@@ -39,7 +39,13 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        txt_sueldo = self.txt_sueldo.get()
+        txt_incremento = self.txt_incremento.get()
+        sueldo = int(txt_sueldo)
+        incremento = float(txt_incremento)
+        final = sueldo + incremento
+        mensaje = "La suma del porcentaje mas el sueldo sería de {0}".format(final)
+        alert("Calculo" , mensaje)
         
     
 if __name__ == "__main__":
