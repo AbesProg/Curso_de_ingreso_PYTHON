@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Sebastián   
+apellido: Campos
 ---
 TP: ES_Facturaciones
 ---
@@ -54,23 +54,54 @@ class App(customtkinter.CTk):
     def btn_total_on_click(self):
         producto_txt1 = self.txt_importe_1.get()
         producto_txt2 = self.txt_importe_2.get()
-        producto_txt3 = self.txt_importe_2.get()
+        producto_txt3 = self.txt_importe_3.get()
 
         producto1 = int(producto_txt1)
         producto2 = int(producto_txt2)
         producto3 = int(producto_txt3)
 
-        
+        resultado_final = producto1 + producto2 + producto3
+        mensaje_final = "La suma entre {0} + {1} + {2} \nDa el valor de: ".format(producto1, producto2, producto3) + str(resultado_final)
 
-
-
+        alert("Suma total" , mensaje_final)
 
     def btn_promedio_on_click(self):
-        pass
+        producto_txt1 = self.txt_importe_1.get()
+        producto_txt2 = self.txt_importe_2.get()
+        producto_txt3 = self.txt_importe_3.get()
+
+        producto1 = int(producto_txt1)
+        producto2 = int(producto_txt2)
+        producto3 = int(producto_txt3)
+
+        productos_general = [producto1, producto2, producto3]
+        resultado_suma = sum(productos_general)
+        resultado_cantidad = len(productos_general)
+        resultado_final = resultado_suma / resultado_cantidad
+        mensaje = "el promedio final entre los valores ingresados \nes de: " + str(resultado_final)
+
+        alert("Promedio final" , mensaje)
 
     def btn_total_iva_on_click(self):
-        pass      
-    
+        producto_txt1 = self.txt_importe_1.get()
+        producto_txt2 = self.txt_importe_2.get()
+        producto_txt3 = self.txt_importe_3.get()
+
+        producto1 = float(producto_txt1)
+        producto2 = float(producto_txt2)
+        producto3 = float(producto_txt3)
+
+        suma = producto1 + producto2 + producto3
+        iva = suma * 0.21
+        final = suma  + iva
+
+        mensaje = "El resultado de los productos es de: " + str(suma) 
+        mensaje_2 = "\nEl precio sumado al iva 21% es de: " + str(final)
+        
+        alert("precio final" , mensaje + mensaje_2)
+
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
