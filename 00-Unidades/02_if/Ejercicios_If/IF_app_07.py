@@ -42,7 +42,33 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+
+        edad_str = self.txt_edad.get()
+        edad = int(edad_str)
+
+        tipo_str = self.combobox_tipo.get()
+        tipo = tipo_str
+        
+        if edad >= 16 and tipo_str == tipo:
+            mensaje = "Es posible votar"
+        else:
+            mensaje = "Es posible votar"
+        
+        #if edad >= 16:
+            #mensaje = "Es posible votar"
+        #else:
+            #mensaje = "No es posible votar"
+        
+        #if edad >=18:
+            #mensaje = "Es posible votar"
+        #else:
+            #mensaje = "No es posible votar"
+        
+        alert("Según sus datos ingresados", mensaje)
+        
+        #devuelve  string-- las palabras tienen  que estar entre comillas
+        #hay 2 variables -- se tienen que cumplir las dos cosas
+
         
         
     
